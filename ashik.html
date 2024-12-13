@@ -36,12 +36,14 @@
             text-align: center;
         }
 
+        /* Adjusted cover photo size */
         .cover-pic {
             width: 100%;
             height: auto;
             max-height: 300px;
-            object-fit: cover;
+            object-fit: cover; /* Ensure the image covers the area */
             border-radius: 10px;
+            margin-bottom: 20px; /* Space below the cover image */
         }
 
         .profile-pic {
@@ -161,7 +163,7 @@
     <div class="container">
         <div class="top-bar"></div>
         <div class="profile-section">
-            <img src="android%20developer%20cover%20pic.jpg">
+            <img src="android%20developer%20cover%20pic.jpg" alt="Cover Photo" class="cover-pic">
             <img src="ashik (1).jpg" alt="Profile Picture" class="profile-pic">
             <h1>MD ASHIK AHAMMED</h1>
             <p>Welcome to visit My Profile</p>
