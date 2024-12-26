@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <title>AS IT INSTITUTE</title>
+
+<style>
+        /* কাস্টম ব্যাকগ্রাউন্ড রঙ */
+        body {
+            background-color: #ff0000; /* হালকা সায়ান */
+        }
+    </style>
+
     <style>
-        /* Centering the container */
         .center-container {
             display: flex;
             flex-direction: column;
@@ -14,167 +21,226 @@
             align-items: center;
             min-height: 100vh;
         }
+
+        .logo-frame {
+            border: 5px solid transparent;
+            border-radius: 50%;
+            animation: borderAnimation 2s infinite;
+        }
+
+        @keyframes borderAnimation {
+            0% { border-color: red; }
+            25% { border-color: green; }
+            50% { border-color: blue; }
+            75% { border-color: yellow; }
+            100% { border-color: red; }
+        }
+
+        .image-frame {
+            width: 100px;
+            height: 100px;
+            border: 3px solid #ccc;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .description-box {
+            font-size: 1rem;
+            color: #1e3a8a;
+            border-bottom: 2px solid #6366f1;
+            padding-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .social-icon {
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #2563eb;
+        }
+
+        .highlight {
+            color: #e11d48;
+        }
+
+        .highlight-secondary {
+            color: #10b981;
+        }
+
+        .highlight-tertiary {
+            color: #f59e0b;
+        }
     </style>
 </head>
-<body class="bg-background text-foreground">
+<body class="bg-gray-100 text-gray-800">
 
-<div class="max-w-4xl mx-auto p-4 bg-background text-foreground center-container">
+<div class="max-w-5xl mx-auto p-4 bg-white shadow-md center-container">
     <!-- Header -->
     <div class="text-center mb-6">
-        <div class="rounded-full bg-zinc-300 w-16 h-16 mx-auto mb-2">
-            <img aria-hidden="true" alt="logo" src="logo.png" />
+        <div class="logo-frame w-20 h-20 mx-auto mb-2">
+            <img aria-hidden="true" alt="logo" src="logo.png" class="w-full h-full object-cover rounded-full" />
         </div>
-        <h1 class="text-2xl font-bold">AS IT INSTITUTE</h1>
+        <h1 class="text-3xl font-bold highlight">AS IT INSTITUTE</h1>
     </div>
 
     <!-- Simple Details -->
     <div class="text-center mb-6">
-        <h2 class="text-lg font-semibold mb-2">Simple Details</h2>
-        <p class="border-b border-muted pb-2">
-            Simple Details:
-Our team, IT Institute, is a skilled and experienced freelancing group. We specialize in three key areas: graphics design, web development, and app development. Our team is dedicated, creative, and committed to delivering high-quality services.
-
-Our Services Include:
-
-Graphics Design: Creative logos, posters, branding, and more.
-
-Web Development: Modern and responsive website creation.
-
-App Development: User-friendly and interactive mobile app development.
-
-
-Our mission is to provide top-notch services tailored to our clients' needs.
-
-
-        </p>
+        <h2 class="text-xl font-semibold mb-2 highlight-secondary">Simple Details</h2>
+        <div id="animated-text" class="description-box"></div>
     </div>
-
-    <!-- Team Leader -->
-    <div class="text-center mb-6">
-        <h2 class="text-lg font-semibold">Team Leader</h2>
-        <div class="flex flex-col items-center">
-            <a href="a.html" target="_blank">
-                <div class="rounded-full bg-zinc-300 w-24 h-24 flex items-center justify-center mb-2">
-                    <img aria-hidden="true" alt="team leader" src="a.png" />
-                </div>
-                <p class="font-medium">Md Asif Ahmed</p>
-            </a>
-        </div>
+<!-- Team Leader -->
+<div class="mb-8">
+    <h3 class="text-xl font-bold text-primary">Team Leader</h3>
+    <div class="flex flex-col items-center mt-4">
+        <a href="asif.html" class="rounded-full bg-zinc-300 w-24 h-24 flex items-center justify-center mb-2">
+            <img aria-hidden="true" alt="team leader" src="asif.jpg" class="rounded-full object-cover w-full h-full">
+        </a>
+        <!-- Wrap the name and position with a link -->
+        <a href="/team-page">
+            <p class="font-medium text-lg">Md Asif Ahmed</p>
+            <p class="text-sm text-muted">Top Management (SEO)</p>
+        </a>
     </div>
+</div>
+
 
     <!-- Team Members -->
     <div class="text-center">
-        <h2 class="text-lg font-semibold mb-4">Team Members</h2>
-        <div class="grid grid-cols-3 gap-6">
-            <!-- Team Member 1 -->
+        <h2 class="text-xl font-semibold mb-4 highlight-tertiary">Team Members</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Team Members -->
             <div class="text-center">
                 <a href="mehdi.html" target="_blank">
-                    <div class="rounded-full bg-zinc-300 w-16 h-16 flex items-center justify-center mx-auto">
-                        <img aria-hidden="true" alt="team member" src="mehdi.jpg" />
+                    <div class="image-frame mx-auto">
+                        <img aria-hidden="true" alt="Mehdi Hasan" src="mehdi.jpg" class="w-full h-full object-cover" />
                     </div>
-                    <p class="mt-2 font-medium">Mehdi Hasan</p>
+                    <p class="mt-2 font-medium highlight">Mehdi Hasan</p>
+                    <p class="text-sm text-gray-500">COO (Chief Operating Officer)</p>
                 </a>
             </div>
-
-            <!-- Team Member 2 -->
             <div class="text-center">
                 <a href="kawsar.html" target="_blank">
-                    <div class="rounded-full bg-zinc-300 w-16 h-16 flex items-center justify-center mx-auto">
-                        <img aria-hidden="true" alt="team member" src="kawsar.jpg" />
+                    <div class="image-frame mx-auto">
+                        <img aria-hidden="true" alt="Kawsar" src="sabbir.jpg" class="w-full h-full object-cover" />
                     </div>
-                    <p class="mt-2 font-medium">MD. Rokibul Hasan Kawsar</p>
+                    <p class="mt-2 font-medium highlight">MD Sabbir</p>
+                    <p class="text-sm text-gray-500">STO (Chief Technology Officer)</p>
                 </a>
             </div>
-
-            <!-- Team Member 3 -->
             <div class="text-center">
                 <a href="irin.html" target="_blank">
-                    <div class="rounded-full bg-zinc-300 w-16 h-16 flex items-center justify-center mx-auto">
-                        <img aria-hidden="true" alt="team member" src="irin.jpg" />
+                    <div class="image-frame mx-auto">
+                        <img aria-hidden="true" alt="Irin Islam" src="irin.jpg" class="w-full h-full object-cover" />
                     </div>
-                    <p class="mt-2 font-medium">IRIN ISLAM</p>
+                    <p class="mt-2 font-medium highlight">Kawsar</p>
+                    <p class="text-sm text-gray-500">GM (General Manager) </p>
                 </a>
             </div>
-        </div>
-
-           <!-- Team Member 4 -->
             <div class="text-center">
                 <a href="tamanna.html" target="_blank">
-                    <div class="rounded-full bg-zinc-300 w-16 h-16 flex items-center justify-center mx-auto">
-                        <img aria-hidden="true" alt="team member" src="tamanna.jpg" />
+                    <div class="image-frame mx-auto">
+                        <img aria-hidden="true" alt="Tamanna" src="tamanna.jpg" class="w-full h-full object-cover" />
                     </div>
-                    <p class="mt-2 font-medium">Tamanna</p>
+                    <p class="mt-2 font-medium highlight">Tamanna</p>
+                    <p class="text-sm text-gray-500">HR Manager</p>
                 </a>
             </div>
-        </div>
-
-
-    <!-- Team Member 5 -->
             <div class="text-center">
                 <a href="tarikul.html" target="_blank">
-                    <div class="rounded-full bg-zinc-300 w-16 h-16 flex items-center justify-center mx-auto">
-                        <img aria-hidden="true" alt="team member" src="tarikul.jpg" />
+                    <div class="image-frame mx-auto">
+                        <img aria-hidden="true" alt="Tarikul Islam" src="tarikul.jpg" class="w-full h-full object-cover" />
                     </div>
-                    <p class="mt-2 font-medium">Tarikul Islam</p>
+                    <p class="mt-2 font-medium highlight">Tarikul Islam</p>
+                    <p class="text-sm text-gray-500">DM (Department Manager)</p>
                 </a>
             </div>
-        </div>
-
-<!-- Team Member 6 -->
             <div class="text-center">
                 <a href="ashik.html" target="_blank">
-                    <div class="rounded-full bg-zinc-300 w-16 h-16 flex items-center justify-center mx-auto">
-                        <img aria-hidden="true" alt="team member" src="ashik.jpg" />
+                    <div class="image-frame mx-auto">
+                        <img aria-hidden="true" alt="Ashik Ahammed" src="ashik.jpg" class="w-full h-full object-cover" />
                     </div>
-                    <p class="mt-2 font-medium">Ashik Ahammed</p>
+                    <p class="mt-2 font-medium highlight">Ashik Ahammed</p>
+                    <p class="text-sm text-gray-500">OM (Operations Manager)</p>
                 </a>
             </div>
-        </div>
-
-
-<!-- Team Member 7 -->
             <div class="text-center">
                 <a href="soniya.html" target="_blank">
-                    <div class="rounded-full bg-zinc-300 w-16 h-16 flex items-center justify-center mx-auto">
-                        <img aria-hidden="true" alt="team member" src="soniya.jpg" />
+                    <div class="image-frame mx-auto">
+                        <img aria-hidden="true" alt="Soniya Akter" src="soniya.jpg" class="w-full h-full object-cover" />
                     </div>
-                    <p class="mt-2 font-medium">Soniya Akter</p>
+                    <p class="mt-2 font-medium highlight">Soniya Akter</p>
+                    <p class="text-sm text-gray-500">LM (Logistics Manager)</p>
                 </a>
             </div>
-        </div>
-    
-
-<!-- Team Member 8 -->
             <div class="text-center">
                 <a href="noyon.html" target="_blank">
-                    <div class="rounded-full bg-zinc-300 w-16 h-16 flex items-center justify-center mx-auto">
-                        <img aria-hidden="true" alt="team member" src="noyon.jpg" />
+                    <div class="image-frame mx-auto">
+                        <img aria-hidden="true" alt="MD. Noyon" src="noyon.jpg" class="w-full h-full object-cover" />
                     </div>
-                    <p class="mt-2 font-medium">MD. Noyon</p>
+                    <p class="mt-2 font-medium highlight">MD. Noyon</p>
+                    <p class="text-sm text-gray-500">Account Manager</p>
                 </a>
             </div>
-        </div>
-
-<!-- Team Member 9 -->
             <div class="text-center">
                 <a href="joba.html" target="_blank">
-                    <div class="rounded-full bg-zinc-300 w-16 h-16 flex items-center justify-center mx-auto">
-                        <img aria-hidden="true" alt="team member" src="joba.jpg" />
+                    <div class="image-frame mx-auto">
+                        <img aria-hidden="true" alt="Joba" src="joba.jpg" class="w-full h-full object-cover" />
                     </div>
-                    <p class="mt-2 font-medium">Joba</p>
+                    <p class="mt-2 font-medium highlight">Joba</p>
+                    <p class="text-sm text-gray-500">Sales Manager</p>
                 </a>
             </div>
-        </div>
 
+        <div class="text-center">
+        <h2 class="text-xl font-semibold mb-4 highlight-tertiary">Team Members</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Team Members -->
+            <div class="text-center">
+                <a href="mehdi.html" target="_blank">
+                    <div class="image-frame mx-auto">
+                        <img aria-hidden="true" alt="Mehdi Hasan" src="mehdi.jpg" class="w-full h-full object-cover" />
+                    </div>
+                    <p class="mt-2 font-medium highlight">Irin Islam</p>
+                    <p class="text-sm text-gray-500">PRO (Publick Relation)</p>
+                </a>
+            </div>
 
-    
-        <div class="mt-4">
-            <button class="bg-secondary text-secondary-foreground hover:bg-secondary/80 p-2 rounded">
-                More...
-            </button>
         </div>
     </div>
+
+    <!-- Social Icons -->
+<div class="text-center mt-10">
+    <h2 class="text-xl font-semibold mb-4 highlight-secondary">Follow Us</h2>
+    <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://facebook.com" target="_blank" class="social-icon text-2xl">Facebook</a>
+        <a href="https://x.com/AsifAhmed144231" target="_blank" class="social-icon text-2xl">Twitter</a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon text-2xl">LinkedIn</a>
+        <a href="https://instagram.com" target="_blank" class="social-icon text-2xl">Instagram</a>
+        <a href="https://youtube.com" target="_blank" class="social-icon text-2xl">YouTube</a>
+        <a href="https://pinterest.com" target="_blank" class="social-icon text-2xl">Pinterest</a>
+        <a href="https://reddit.com" target="_blank" class="social-icon text-2xl">Reddit</a>
+        <a href="https://tiktok.com" target="_blank" class="social-icon text-2xl">TikTok</a>
+    </div>
 </div>
+</div>
+
+<script>
+    const descriptionText = "Our team, AS IT Institute, is a skilled and experienced freelancing group. We specialize in three key areas: graphics design, web development, and app development. Our mission is to provide top-notch services tailored to our clients' needs.";
+    const animatedTextElement = document.getElementById('animated-text');
+    let index = 0;
+
+    function animateText() {
+        if (index < descriptionText.length) {
+            animatedTextElement.innerHTML += descriptionText.charAt(index);
+            index++;
+            setTimeout(animateText, 50);
+        }
+    }
+
+    animateText();
+</script>
 
 </body>
 </html>
